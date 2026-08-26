@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Mensaje principal con puntaje GAD-7 -->
+        <TextView
+            android:id="@+id/tv_mensaje_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[Nombre], tu nivel de ansiedad evaluado según la escala GAD-7 es [Resultado]"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/deep_night"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Mensaje personalizado según el rango -->
+        <TextView
+            android:id="@+id/tv_mensaje_personalizado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mensaje personalizado de apoyo según el resultado de la escala..."
+            android:textSize="15sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Botón Diario de pensamientos (Visible en frontend, sin acción en backend)[cite: 1] -->
+        <Button
+            android:id="@+id/btn_diario_pensamientos"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Diario de pensamientos"
+            android:textColor="@color/text_on_primary"
+            android:backgroundTint="@color/purple_point"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón Respiración guiada (Visible en frontend, sin acción en backend)[cite: 1] -->
+        <Button
+            android:id="@+id/btn_respiracion_guiada"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Respiración guiada"
+            android:textColor="@color/text_on_primary"
+            android:backgroundTint="@color/purple_point"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón Volver a tomar encuesta -->
+        <Button
+            android:id="@+id/btn_volver_encuesta"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Volver a tomar encuesta"
+            android:textColor="@color/text_on_primary"
+            android:backgroundTint="@color/purple_point"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</ScrollView>

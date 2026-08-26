@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Saludo personalizado -->
+        <TextView
+            android:id="@+id/tv_saludo_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hola [Usuario], queremos saber tu nivel de ansiedad actual para personalizar tu experiencia"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/deep_night"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Pregunta 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Sentirse nervioso, ansioso o con los nervios de punta."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p1_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p1_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p1_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p1_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Pregunta 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. No poder dejar de preocuparse o controlar la preocupación."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p2_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p2_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p2_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p2_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Pregunta 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Preocuparse demasiado por diferentes cosas."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p3_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p3_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p3_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p3_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Pregunta 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Dificultad para relajarse."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p4_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p4_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p4_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p4_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Pregunta 5 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Estar tan inquieto que es difícil mantenerse sentado."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p5_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p5_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p5_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p5_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Pregunta 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. Sentirse fácilmente molesto o irritable."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p6_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p6_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p6_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p6_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Pregunta 7 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_question_card"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7. Sentir miedo como si algo terrible fuera a pasar."
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/rg_p7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton android:id="@+id/rb_p7_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0: Nunca / Para nada" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p7_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1: Varios días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p7_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2: Más de la mitad de los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+                <RadioButton android:id="@+id/rb_p7_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3: Casi todos los días" android:textColor="@color/text_secondary" android:buttonTint="@color/green_regulator" android:paddingTop="4dp" android:paddingBottom="4dp"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Botón Evaluar -->
+        <Button
+            android:id="@+id/btn_evaluar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Evaluar"
+            android:textColor="@color/text_on_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_button_primary"
+            android:backgroundTint="@color/purple_primary"
+            android:elevation="2dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

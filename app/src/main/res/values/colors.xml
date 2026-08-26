@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Paleta principal de Pasiflora -->
+
+    <!-- Fondo general de la aplicación -->
+    <color name="background">#CEBEF6</color>
+
+    <!-- Violeta principal: botones y elementos principales -->
+    <color name="purple_primary">#9B88C0</color>
+
+    <!-- Verde regulador: estados de calma, bienestar y confirmaciones -->
+    <color name="green_regulator">#9FC6A4</color>
+
+    <!-- Azul-violeta profundo: textos principales e iconos -->
+    <color name="deep_night">#434969</color>
+
+    <!-- Acento suave: progreso y pequeños detalles -->
+    <color name="soft_accent">#F3F4E1</color>
+
+    <!-- Violeta de punto: detalles pequeños e iconos activos -->
+    <color name="purple_point">#5C4789</color>
+
+
+    <!-- Colores de texto -->
+
+    <color name="text_primary">#434969</color>
+    <color name="text_secondary">#6B6F76</color>
+
+    <!-- Texto sobre botones -->
+    <color name="text_on_primary">#FFFFFF</color>
+
+
+    <!-- Estados de la aplicación -->
+
+    <!-- Error suave para mantener la sensación de calma -->
+    <color name="error">#B56B78</color>
+
+    <!-- Fondo de mensajes de error -->
+    <color name="error_container">#F3DEE2</color>
+
+    <!-- Estado exitoso -->
+    <color name="success">#6F9B78</color>
+
+
+    <!-- Superficies -->
+
+    <color name="surface">#FFFFFF</color>
+
+    <!-- Bordes y divisores -->
+    <color name="border">#E2DFEA</color>
+
+    <!-- Blanco -->
+    <color name="white">#FFFFFF</color>
+
+</resources>
