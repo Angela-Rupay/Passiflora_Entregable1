@@ -241,7 +241,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:background="@drawable/bg_button_primary"
-            android:backgroundTint="@color/purple_primary"
+            android:backgroundTint="@color/purple_point"
             android:elevation="2dp"/>
 
     </LinearLayout>
