@@ -30,8 +30,6 @@ class ListaEjerciciosActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.rv_ejercicios)
         progressBar = findViewById(R.id.progress_ejercicios)
 
-        val btnAgregar =
-            findViewById<Button>(R.id.btn_agregar_ejercicio)
 
         adapter = EjercicioAdapter(ejercicios)
 
@@ -43,9 +41,7 @@ class ListaEjerciciosActivity : AppCompatActivity() {
         // Cargar ejercicios desde MockAPI
         cargarEjercicios()
 
-        btnAgregar.setOnClickListener {
-            agregarEjercicio()
-        }
+
     }
 
     private fun cargarEjercicios() {

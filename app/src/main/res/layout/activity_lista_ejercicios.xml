@@ -21,16 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:layout_marginBottom="16dp"
-        android:text="Consulta y agrega ejercicios de respiración"
+        android:text="Consulta ejercicios de respiración"
         android:textSize="14sp"
         android:textColor="@color/text_secondary"/>
-
-    <Button
-        android:id="@+id/btn_agregar_ejercicio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Agregar ejercicio"
-        android:layout_marginBottom="16dp"/>
 
     <ProgressBar
         android:id="@+id/progress_ejercicios"

@@ -236,13 +236,15 @@
             android:id="@+id/btn_evaluar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/purple_point"
             android:text="Evaluar"
+            android:textAllCaps="false"
             android:textColor="@color/text_on_primary"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="@drawable/bg_button_primary"
-            android:backgroundTint="@color/purple_point"
-            android:elevation="2dp"/>
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

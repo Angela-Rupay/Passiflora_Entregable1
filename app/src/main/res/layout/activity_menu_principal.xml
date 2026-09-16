@@ -102,10 +102,6 @@
                 android:lineSpacingExtra="5dp"/>
         </LinearLayout>
 
-        <!-- Botón Diario -->
-
-        <!-- Botón Respiración -->
-
         <!-- Botón Volver -->
         <Button
             android:id="@+id/btn_volver_encuesta"
@@ -119,25 +115,33 @@
             android:textColor="@color/text_on_primary"
             android:textStyle="bold"/>
 
+        <!-- Botón Respiración (mismo estilo que Volver) -->
         <Button
             android:id="@+id/btn_ejercicios_respiracion"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/purple_point"
             android:text="Ejercicios de respiración"
+            android:textAllCaps="false"
             android:textColor="@color/text_on_primary"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="@drawable/bg_button_primary"
-            android:backgroundTint="@color/green_regulator"
-            android:layout_marginTop="20dp"
-            android:elevation="2dp"/>
+            android:textStyle="bold"/>
 
+        <!-- Botón Ejercicios (mismo estilo que Volver) -->
         <Button
             android:id="@+id/btn_ejercicios"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ejercicios de respiración"/>
-        <!-- Botón Cerrar sesión -->
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/purple_point"
+            android:text="Lista de ejercicios"
+            android:textAllCaps="false"
+            android:textColor="@color/text_on_primary"
+            android:textStyle="bold"/>
+
+        <!-- Botón Cerrar sesión (se mantiene intacto) -->
         <Button
             android:id="@+id/btn_cerrar_sesion"
             android:layout_width="match_parent"
