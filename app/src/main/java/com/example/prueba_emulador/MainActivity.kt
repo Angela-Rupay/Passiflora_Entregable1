@@ -38,6 +38,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Si ya hay sesión activa, evitar que el usuario vuelva a registrarse
+        if (PreferenciasUsuario.haySesionActiva(this)) {
+            if (PreferenciasUsuario.obtenerPuntaje(this) >= 0) {
+                // Ya completó la encuesta antes: directo al Home
+                startActivity(Intent(this, MenuPrincipalActivity::class.java))
+            } else {
+                // Está registrado pero aún no ha hecho la encuesta GAD-7
+                val intent = Intent(this, FormularioActivity::class.java).apply {
+                    putExtra("EXTRA_NOMBRE", PreferenciasUsuario.obtenerNombreCompleto(this@MainActivity))
+                }
+                startActivity(intent)
+            }
+            finish()
+            return
+        }
+
         // Vincular componentes respetando la nomenclatura (inicial_funcion)
         etNombre = findViewById(R.id.et_nombre)
         etApellido = findViewById(R.id.et_apellido)
@@ -52,6 +68,11 @@ class MainActivity : AppCompatActivity() {
         tvReqMayus = findViewById(R.id.tv_req_mayus)
         tvReqNum = findViewById(R.id.tv_req_num)
 
+        // Precargar datos guardados de un registro anterior
+        etNombre.setText(PreferenciasUsuario.obtenerNombre(this))
+        etApellido.setText(PreferenciasUsuario.obtenerApellido(this))
+        etCorreo.setText(PreferenciasUsuario.obtenerCorreo(this))
+
         // Ejecutar animación nativa inicial al abrir la Activity
         iniciarAnimacion()
 
@@ -62,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         btnRegistro.setOnClickListener {
             val nombreInput = etNombre.text.toString().trim()
             val apellidoInput = etApellido.text.toString().trim()
+            val correoInput = etCorreo.text.toString().trim()
 
             // Validar campos de texto vacíos o con números en nombres
             if (!validarNombresYApellidos()) {
@@ -72,6 +94,9 @@ class MainActivity : AppCompatActivity() {
             if (!validarCorreoElectronico()) {
                 return@setOnClickListener
             }
+
+            // Guardar los datos del formulario para que se mantengan la próxima vez
+            PreferenciasUsuario.guardarDatos(this, nombreInput, apellidoInput, correoInput)
 
             // Unir nombre y apellido manejando valores por defecto con ?: si llegaran a estar vacíos
             val nombreFinal = if (nombreInput.isNotEmpty()) nombreInput else "Usuario"
@@ -101,7 +126,6 @@ class MainActivity : AppCompatActivity() {
         etCorreo.addTextChangedListener(textWatcherGeneral)
         cbTerminos.setOnCheckedChangeListener { _, _ -> verificarFormularioCompleto() }
 
-        // TextWatcher específico para la contraseña (efecto "chuleo" en tiempo real)
         etContrasena.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}

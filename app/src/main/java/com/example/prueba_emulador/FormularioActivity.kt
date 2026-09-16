@@ -12,7 +12,6 @@ class FormularioActivity : AppCompatActivity() {
     private lateinit var tvSaludoUsuario: TextView
     private lateinit var btnEvaluar: Button
 
-    // RadioGroups correspondientes a las 7 preguntas del GAD-7
     private lateinit var rgP1: RadioGroup
     private lateinit var rgP2: RadioGroup
     private lateinit var rgP3: RadioGroup
@@ -27,7 +26,6 @@ class FormularioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario)
 
-        // Vincular vistas con sus respectivos IDs
         tvSaludoUsuario = findViewById(R.id.tv_saludo_usuario)
         btnEvaluar = findViewById(R.id.btn_evaluar)
 
@@ -39,14 +37,11 @@ class FormularioActivity : AppCompatActivity() {
         rgP6 = findViewById(R.id.rg_p6)
         rgP7 = findViewById(R.id.rg_p7)
 
-        // Recuperar el nombre y apellido enviado desde MainActivity usando ?: con valor por defecto
         nombreCompletoUsuario = intent.getStringExtra("EXTRA_NOMBRE") ?: "Usuario"
         tvSaludoUsuario.text = "Hola $nombreCompletoUsuario, queremos saber tu nivel de ansiedad actual para personalizar tu experiencia"
 
-        // El botón inicia deshabilitado hasta que se respondan todas las preguntas
         btnEvaluar.isEnabled = false
 
-        // Escuchar los cambios en cada RadioGroup para verificar si el formulario está completo
         val listener = RadioGroup.OnCheckedChangeListener { _, _ ->
             verificarFormularioCompleto()
         }
@@ -59,17 +54,18 @@ class FormularioActivity : AppCompatActivity() {
         rgP6.setOnCheckedChangeListener(listener)
         rgP7.setOnCheckedChangeListener(listener)
 
-        // Acción del botón Evaluar: Calcula puntaje y pasa al Menú Principal
         btnEvaluar.setOnClickListener {
             val puntajeTotal = calcularPuntajeTotal()
 
-            // Conectar con la tercera activity (Menú Principal) enviando datos
+            // Guardar el puntaje para poder mostrarlo si luego se entra directo al Home
+            PreferenciasUsuario.guardarPuntaje(this, puntajeTotal)
+
             val intent = Intent(this, MenuPrincipalActivity::class.java).apply {
                 putExtra("EXTRA_NOMBRE", nombreCompletoUsuario)
                 putExtra("EXTRA_PUNTAJE", puntajeTotal)
             }
             startActivity(intent)
-            finish() // Siempre terminar con finish() al cambiar de activity
+            finish()
         }
     }
 
@@ -82,13 +78,11 @@ class FormularioActivity : AppCompatActivity() {
         val respondido6 = rgP6.checkedRadioButtonId != -1
         val respondido7 = rgP7.checkedRadioButtonId != -1
 
-        // Se activa el botón únicamente si las 7 preguntas tienen una opción marcada
         btnEvaluar.isEnabled = respondido1 && respondido2 && respondido3 &&
                 respondido4 && respondido5 && respondido6 && respondido7
     }
 
     private fun calcularPuntajeTotal(): Int {
-        // Asignación de valores según la opción seleccionada en los RadioButtons (0 a 3)
         val p1 = obtenerValorRadio(rgP1.checkedRadioButtonId, R.id.rb_p1_0, R.id.rb_p1_1, R.id.rb_p1_2, R.id.rb_p1_3)
         val p2 = obtenerValorRadio(rgP2.checkedRadioButtonId, R.id.rb_p2_0, R.id.rb_p2_1, R.id.rb_p2_2, R.id.rb_p2_3)
         val p3 = obtenerValorRadio(rgP3.checkedRadioButtonId, R.id.rb_p3_0, R.id.rb_p3_1, R.id.rb_p3_2, R.id.rb_p3_3)
