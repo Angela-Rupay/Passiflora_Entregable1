@@ -22,6 +22,7 @@ class MenuPrincipalActivity : AppCompatActivity() {
         tvMensajeResultado = findViewById(R.id.tv_mensaje_resultado)
         tvMensajePersonalizado = findViewById(R.id.tv_mensaje_personalizado)
         btnVolverEncuesta = findViewById(R.id.btn_volver_encuesta)
+        val btnEjercicios = findViewById<Button>(R.id.btn_ejercicios)
 
         // Recibir los datos enviados desde FormularioActivity
         val nombreUsuario = intent.getStringExtra("EXTRA_NOMBRE") ?: "Usuario"
@@ -61,6 +62,14 @@ class MenuPrincipalActivity : AppCompatActivity() {
             intent.putExtra("PUNTAJE_TOTAL", puntajeTotal)
             startActivity(intent)
         }
+        btnEjercicios.setOnClickListener {
 
+            val intent = Intent(
+                this,
+                ListaEjerciciosActivity::class.java
+            )
+
+            startActivity(intent)
+        }
     }
 }
