@@ -21,13 +21,13 @@ class MenuPrincipalActivity : AppCompatActivity() {
         // Vincular vistas
         tvMensajeResultado = findViewById(R.id.tv_mensaje_resultado)
         tvMensajePersonalizado = findViewById(R.id.tv_mensaje_personalizado)
-        btnDiarioPensamientos = findViewById(R.id.btn_diario_pensamientos)
-        btnRespiracionGuiada = findViewById(R.id.btn_respiracion_guiada)
         btnVolverEncuesta = findViewById(R.id.btn_volver_encuesta)
 
         // Recibir los datos enviados desde FormularioActivity
         val nombreUsuario = intent.getStringExtra("EXTRA_NOMBRE") ?: "Usuario"
         val puntajeTotal = intent.getIntExtra("EXTRA_PUNTAJE", 0)
+
+        val btnEjerciciosRespiracion = findViewById<Button>(R.id.btn_ejercicios_respiracion)
 
         // 1. Mostrar mensaje con el nombre y el puntaje evaluado según la escala GAD-7[cite: 1]
         tvMensajeResultado.text = "$nombreUsuario, tu nivel de ansiedad evaluado según la escala GAD-7 es $puntajeTotal puntos."
@@ -45,13 +45,6 @@ class MenuPrincipalActivity : AppCompatActivity() {
         tvMensajePersonalizado.text = mensajeApoyo
 
         // 3. Botones del frontend sin acción en el backend (tal como lo indicaste)[cite: 1]
-        btnDiarioPensamientos.setOnClickListener {
-            // Está en el frontend pero no realiza ninguna acción en el backend
-        }
-
-        btnRespiracionGuiada.setOnClickListener {
-            // Está en el frontend pero no realiza ninguna acción en el backend
-        }
 
         // 4. Botón para volver a tomar la encuesta (regresa a FormularioActivity)[cite: 1]
         btnVolverEncuesta.setOnClickListener {
@@ -61,5 +54,13 @@ class MenuPrincipalActivity : AppCompatActivity() {
             startActivity(intent)
             finish() // Cierra esta activity para limpiar la pila
         }
+
+        btnEjerciciosRespiracion.setOnClickListener {
+            val intent = Intent(this, EjerciciosRespiracionActivity::class.java)
+            // Reutiliza el mismo puntaje que ya usas para mostrar el nivel en esta pantalla
+            intent.putExtra("PUNTAJE_TOTAL", puntajeTotal)
+            startActivity(intent)
+        }
+
     }
 }

@@ -6,6 +6,10 @@ android {
     namespace = "com.example.prueba_emulador"
     compileSdk {
         version = release(37)
+
+        buildFeatures {
+            buildConfig = true
+        }
     }
 
     defaultConfig {
@@ -16,6 +20,12 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "YOUTUBE_API_KEY",
+            "\"${project.findProperty("YOUTUBE_API_KEY") ?: System.getenv("YOUTUBE_API_KEY")}\""
+        )
     }
 
     buildTypes {
@@ -36,8 +46,12 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 }
+

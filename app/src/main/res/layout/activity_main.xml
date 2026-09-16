@@ -112,42 +112,7 @@
             android:inputType="textPassword"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"/>
-        <!--<EditText
-            android:id="@+id/et_apellido"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Apellido"
-            android:inputType="textPersonName"
-            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZáéíóúÁÉÍÓÚñÑ "
-            android:background="@color/surface"
-            android:paddingHorizontal="16dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/text_primary"/>
 
-        <EditText
-            android:id="@+id/et_correo"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Correo electrónico"
-            android:inputType="textEmailAddress"
-            android:background="@color/surface"
-            android:paddingHorizontal="16dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/text_primary"/>
-
-        <EditText
-            android:id="@+id/et_contrasena"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:background="@color/surface"
-            android:paddingHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/text_primary"/>-->
-
-
-        <!-- Requisitos de contraseña con iconos informativos -->
 
         <LinearLayout
             android:layout_width="match_parent"
